@@ -73,7 +73,7 @@ def read_chat_data(data_path,vocabulary_path, max_size=None):
     print(len(vocab))
     print(max_size)
     data_set = [[] for _ in _buckets]
-    with codecs.open(data_path, "rb") as fi:
+    with codecs.open(data_path, "r") as fi:
         for line in fi.readlines():
             counter += 1
             if max_size!=0 and counter > max_size:
