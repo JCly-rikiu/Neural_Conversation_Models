@@ -98,7 +98,7 @@ def create_vocabulary(vocabulary_path, data_path, max_vocabulary_size,
             else:
               vocab[word] = 1
       vocab_list = _START_VOCAB + sorted(vocab, key=vocab.get, reverse=True)
-      print len(vocab_list)
+      print(len(vocab_list))
       if len(vocab_list) > max_vocabulary_size:
         vocab_list = vocab_list[:max_vocabulary_size]
       with gfile.GFile(vocabulary_path, mode="w") as vocab_file:
@@ -192,4 +192,3 @@ def data_to_token_ids(data_path, target_path, vocabulary_path,
           token_ids = sentence_to_token_ids(line, vocab, tokenizer,
                                             normalize_digits)
           tokens_file.write(" ".join([str(tok) for tok in token_ids]) + "\n")
-
