@@ -195,7 +195,7 @@ def train():
       # Once in a while, we save checkpoint, print statistics, and run evals.
       if current_step % FLAGS.steps_per_checkpoint == 0:
         # Print statistics for the previous epoch.
-        print "Running epochs"
+        print("Running epochs")
         perplexity = math.exp(loss) if loss < 300 else float('inf')
         print ("global step %d learning rate %.4f step-time %.2f perplexity "
                 "%.2f" % (model.global_step.eval(), model.learning_rate.eval(),
