@@ -597,7 +597,8 @@ def beam_attention_decoder(decoder_inputs, initial_state, attention_states, cell
 
     print("Initial_state")
 
-    state_size =  int(initial_state.get_shape().with_rank(2)[1])
+    state_size = sum([int(s.get_shape().with_rank(2)[1]) for s in initial_state])
+    # state_size =  int(initial_state.get_shape().with_rank(2)[1])
     states =[]
     for kk in range(1):
         states.append(initial_state)
